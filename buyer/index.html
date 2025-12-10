@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preliminary Layout · Active Auctions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="screen-header">
+                    <div class="brand">
+                        <div class="brand-icon">LOGO</div>
+                    </div>
+                    <div class="header-actions">
+                        <button type="button">Filter</button>
+                        <button type="button" onclick="window.location.href='notifications.html'">Notification</button>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search  Placeholders" aria-label="Search products">
+                </div>
+
+                <div class="pill-group category-filter" role="group" aria-label="Category filter">
+                    <button class="pill active" type="button" data-category-filter="all">All</button>
+                    <button class="pill" type="button" data-category-filter="option-a">Filter Option</button>
+                    <button class="pill" type="button" data-category-filter="option-b">Filter Option</button>
+                </div>
+
+
+
+                <div class="section-heading">
+                    <h2>Active Auction Cards</h2>
+                    <span class="live-badge">
+                        <span class="dot" aria-hidden="true"></span>
+                        Status
+                    </span>
+                </div>
+
+                <div class="auction-grid">
+                    <a class="card-link" href="product.html">
+                        <article class="auction-card" data-category="option-a" data-price="range-a">
+                            <div class="card-media">
+                                <div class="image-placeholder">IMAGE</div>
+                                <span class="timer-pill">Duration</span>
+                                <span class="bid-pill">NoOfBid</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Product Name</h3>
+                                <p class="label">Current Bid</p>
+                                <p class="price">Bid Amount</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="card-link" href="product.html">
+                        <article class="auction-card" data-category="option-b" data-price="range-b">
+                            <div class="card-media">
+                                <div class="image-placeholder">IMAGE</div>
+                                <span class="timer-pill">Duration</span>
+                                <span class="bid-pill">NoOfBid</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Product Name</h3>
+                                <p class="label">Current Bid</p>
+                                <p class="price">Bid Amount</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="card-link" href="product.html">
+                        <article class="auction-card" data-category="option-c" data-price="range-c">
+                            <div class="card-media">
+                                <div class="image-placeholder">IMAGE</div>
+                                <span class="timer-pill">Duration</span>
+                                <span class="bid-pill">NoOfBid</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Product Name</h3>
+                                <p class="label">Current Bid</p>
+                                <p class="price">Bid Amount</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="card-link" href="product.html">
+                        <article class="auction-card" data-category="option-a" data-price="range-b">
+                            <div class="card-media">
+                                <div class="image-placeholder">IMAGE</div>
+                                <span class="timer-pill">Duration</span>
+                                <span class="bid-pill">NoOfBid</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Product Name</h3>
+                                <p class="label">Current Bid</p>
+                                <p class="price">Bid Amount</p>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <button class="floating-action" type="button"
+                    onclick="window.location.href='wishlist.html'">Saved</button>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            const categoryFilters = document.querySelectorAll('[data-category-filter]');
+            const priceFilters = document.querySelectorAll('[data-price-filter]');
+            const cards = document.querySelectorAll('.auction-card');
+            const resultsCountEl = document.getElementById('resultsCount');
+            let activeCategory = 'all';
+            let activePrice = 'all';
+
+            const setActive = (target, selector) => {
+                document.querySelectorAll(selector).forEach((btn) => btn.classList.remove('active'));
+                target.classList.add('active');
+            };
+
+            const applyFilters = () => {
+                let visible = 0;
+                cards.forEach((card) => {
+                    const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+                    const matchesPrice = activePrice === 'all' || card.dataset.price === activePrice;
+                    const show = matchesCategory && matchesPrice;
+                    card.style.display = show ? '' : 'none';
+                    if (show) visible += 1;
+                });
+                resultsCountEl.textContent = `No. of results found`;
+            };
+
+            categoryFilters.forEach((button) => {
+                button.addEventListener('click', () => {
+                    activeCategory = button.dataset.categoryFilter;
+                    setActive(button, '[data-category-filter]');
+                    applyFilters();
+                });
+            });
+
+            priceFilters.forEach((button) => {
+                button.addEventListener('click', () => {
+                    activePrice = button.dataset.priceFilter;
+                    setActive(button, '[data-price-filter]');
+                    applyFilters();
+                });
+            });
+
+            applyFilters();
+        })();
+    </script>
+</body>
+
+</html>

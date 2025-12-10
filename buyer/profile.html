@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="profile-cover"></div>
+
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <div class="avatar">
+                            <span class="avatar-icon">PHOTO</span>
+                            <button class="edit-avatar" aria-label="Edit avatar"
+                                onclick="window.location.href='edit-profile.html'">
+                                <span class="edit-text">Edit</span>
+                            </button>
+                        </div>
+                    </div>
+                    <h1 class="profile-name">User Name Field</h1>
+                    <p class="profile-handle">Email Field | PhoneNo Field</p>
+                </div>
+
+                <div class="stats-row">
+                    <article>
+                        <strong>Total Bids</strong>
+                    </article>
+                    <article>
+                        <strong>Items Won</strong>
+                    </article>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="profile-tile" type="button" onclick="window.location.href='edit-profile.html'">
+                        Edit Profile
+                    </button>
+                    <button class="profile-tile" type="button" onclick="window.location.href='delivery-options.html'">
+                        Delivery Options
+                    </button>
+                    <button class="profile-tile" type="button" onclick="window.location.href='wishlist.html'">
+                        My Receipts
+                    </button>
+                    <button class="profile-tile" type="button">
+                        Log Out
+                    </button>
+                </div>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html" aria-current="page">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

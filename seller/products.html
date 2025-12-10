@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header -->
+                <div class="screen-header">
+                    <h1 style="font-size: 24px; font-weight: 600; margin: 0;">My Products</h1>
+                </div>
+
+                <!-- Search -->
+                <div class="search-input-wrapper">
+                    <input type="text" placeholder="Search products...">
+                </div>
+
+                <!-- Filter Chips -->
+                <div class="filter-container">
+                    <button class="filter-chip active">Category</button>
+                    <button class="filter-chip">Category</button>
+                    <button class="filter-chip">Category</button>
+                </div>
+
+                <!-- Product List -->
+                <div class="listings">
+                    <!-- Product 2 -->
+                    <article class="card" onclick="location.href='view-product.html'" style="cursor: pointer;">
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <h3 class="card-title">Product Name</h3>
+                                    <span
+                                        style="border: 1px solid var(--text-color); padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 500;">Status</span>
+                                </div>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Starting Price</p>
+                                    <p class="card-price">RM XX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer" style="justify-content: flex-end;">
+                                <span>Stock: XX</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Generic Item 3 -->
+                    <article class="card" onclick="location.href='edit-product.html'" style="cursor: pointer;">
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <h3 class="card-title">Product Name</h3>
+                                    <span
+                                        style="border: 1px solid var(--text-color); padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 500;">Status</span>
+                                </div>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Starting Price</p>
+                                    <p class="card-price">RM XX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer" style="justify-content: flex-end;">
+                                <span>Stock Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Floating Action Button -->
+                <button class="floating-action-btn" onclick="location.href='add-product.html'">Add
+                    New<br>Product</button>
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item active">Products</a>
+                <a href="goLive.html" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+        </section>
+    </main>
+</body>
+
+</html>

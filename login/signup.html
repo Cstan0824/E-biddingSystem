@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - WinBid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .input-icon {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="viewport">
+        <div class="status-bar">
+            <span>9:41</span>
+            <div style="display: flex; gap: 4px;">
+                <span>●</span><span>●</span><span>●</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="logo-section">
+                <div class="logo-text">LOGO</div>
+            </div>
+
+            <h1 class="page-title">Create Account</h1>
+            <p class="page-subtitle">Sign up to start bidding</p>
+
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <div class="input-wrapper">
+                        <input type="text" class="form-input" placeholder="Enter your full name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" class="form-input" placeholder="Enter your email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <div class="input-wrapper">
+                        <input type="tel" class="form-input" placeholder="+60123456789">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" class="form-input" placeholder="Create a password">
+                        <span class="password-toggle" style="font-size: 12px;">Show</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" class="form-input" placeholder="Confirm your password">
+                        <span class="password-toggle" style="font-size: 12px;">Show</span>
+                    </div>
+                </div>
+
+                <label class="form-label">Register as</label>
+                <div class="role-toggler" style="margin-bottom: 24px;">
+                    <button type="button" class="role-btn active" onclick="switchRole('buyer')">
+                        Buyer
+                    </button>
+                    <button type="button" class="role-btn" onclick="switchRole('seller')">
+                        Seller
+                    </button>
+                </div>
+
+                <button type="button" class="btn-primary" onclick="handleSignup()">Sign Up</button>
+            </form>
+
+            <p class="footer-text" style="margin-top: auto;">
+                Already have an account? <a href="index.html" class="footer-link">Sign In</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let currentRole = 'buyer';
+
+        function switchRole(role) {
+            currentRole = role;
+            const btns = document.querySelectorAll('.role-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            if (role === 'buyer') {
+                btns[0].classList.add('active');
+            } else {
+                btns[1].classList.add('active');
+            }
+        }
+
+        function handleSignup() {
+            if (currentRole === 'buyer') {
+                window.location.href = '../buyer/index.html';
+            } else {
+                window.location.href = '../seller/index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

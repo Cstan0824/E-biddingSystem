@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Bid Session</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header with Back -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
+                    <a href="index.html" class="back-btn">Back</a>
+                    <div>
+                        <h1 style="font-size: 16px; font-weight: 600; margin: 0;">Start Bid Session</h1>
+                    </div>
+                </div>
+
+                <!-- Stepper -->
+                <div class="stepper-container">
+                    <div class="step active">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Select</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Duration</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+
+                <!-- Step Title -->
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                    <div class="step-indicator-small">1</div>
+                    <h2 style="font-size: 14px; font-weight: 500; margin: 0;">Select Product</h2>
+                </div>
+                <p style="font-size: 12px; color: var(--muted-color); margin: 0 0 16px 28px;">Choose a product to start
+                    bidding</p>
+
+                <!-- Search & Filter -->
+                <div class="search-container" style="padding: 0;">
+                    <div class="search-bar" style="margin-bottom: 12px;">
+                        Search products...
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <span style="font-size: 12px; color: var(--muted-color);">Filter by category:</span>
+                    <select class="category-select">
+                        <option selected>Category</option>
+                        <option>Category</option>
+                        <option>Category</option>
+                    </select>
+                </div>
+
+                <!-- Product List -->
+                <div class="listings" style="padding-bottom: 80px;"> <!-- Padding for bottom button -->
+                    <!-- Product 1 -->
+                    <article class="card">
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Product Name</h3>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Starting Price</p>
+                                    <p class="card-price">RM xxx.xx</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span></span>
+                                <span>Stock Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="card">
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Product Name</h3>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Starting Price</p>
+                                    <p class="card-price">RM xxx.xx</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span></span>
+                                <span>Stock Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="card">
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Product Name</h3>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Starting Price</p>
+                                    <p class="card-price">RM xxx.xx</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span></span>
+                                <span>Stock Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Next Button -->
+                <div class="fixed-bottom-action">
+                    <a href="goLive-step2.html" class="primary-btn">Next</a>
+                </div>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="goLive.html" class="nav-item active">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

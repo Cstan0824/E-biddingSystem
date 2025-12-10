@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header -->
+                <div class="screen-header">
+                    <div class="brand">
+                        <div class="brand-icon">LOGO</div>
+                    </div>
+                    <div class="header-actions">
+                        <button type="button"
+                            onclick="window.location.href = '../buyer/notifications.html';">Notification</button>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        Search session placeholders
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab mono active">Active</button>
+                    <button class="tab mono">Ended</button>
+                </div>
+
+                <!-- Listings -->
+                <div class="listings">
+                    <!-- Product 1 -->
+                    <article class="card" onclick="location.href='session-details.html'" style="cursor: pointer;">
+                        <span class="card-status">Status</span>
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Product Name</h3>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Current Bid</p>
+                                    <p class="card-price">RM XXX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span>Time Left</span>
+                                <span>No of Bidders</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Specific Item 2 -->
+                    <article class="card" onclick="location.href='session-details-empty.html'" style="cursor: pointer;">
+                        <span class="card-status">Status</span>
+                        <div class="card-image-area">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Product Name</h3>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Current Bid</p>
+                                    <p class="card-price">RM XXX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span>Time Left</span>
+                                <span>No of Bidders</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Bottom Navigation -->
+                <nav class="bottom-nav">
+                    <a href="index.html" class="nav-item active">Home</a>
+                    <a href="products.html" class="nav-item">Products</a>
+                    <a href="goLive.html" class="nav-item">Start Session</a>
+                    <a href="orders.html" class="nav-item">Orders</a>
+                    <a href="profile.html" class="nav-item">Profile</a>
+                </nav>
+            </section>
+        </section>
+
+    </main>
+</body>
+
+</html>

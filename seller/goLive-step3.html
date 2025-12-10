@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Bid Session - Step 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header with Back -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
+                    <a href="goLive-step2.html" class="back-btn">Back</a>
+                    <div>
+                        <h1 style="font-size: 16px; font-weight: 600; margin: 0;">Start Bid Session</h1>
+
+                    </div>
+                </div>
+
+                <!-- Stepper -->
+                <div class="stepper-container">
+                    <div class="step completed">
+                        <div class="step-circle">Done</div>
+                        <span class="step-label">Select</span>
+                    </div>
+                    <div class="step-line filled"></div>
+                    <div class="step completed">
+                        <div class="step-circle">Done</div>
+                        <span class="step-label">Duration</span>
+                    </div>
+                    <div class="step-line filled"></div>
+                    <div class="step active">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+
+                <!-- Step Title -->
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                    <div class="step-indicator-small">3</div>
+                    <h2 style="font-size: 14px; font-weight: 500; margin: 0;">Confirm Details</h2>
+                </div>
+
+
+                <!-- Preview Card -->
+                <div class="preview-card"
+                    style="margin-bottom: 16px; border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; background: #fff;">
+                    <div style="height: 180px; background: #eee; position: relative;">
+                        <span class="pill-tag">Category</span>
+                        <!-- Hero Image Placeholder -->
+                        <div
+                            style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                            IMAGE</div>
+                        <div
+                            style="position: absolute; top: 12px; right: 12px; width: 24px; height: 24px; background: #2196f3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                            i</div>
+                    </div>
+                    <div style="padding: 16px;">
+                        <h3 style="margin: 0 0 8px; font-size: 16px;">Product Name</h3>
+                        <p style="margin: 0; font-size: 12px; color: var(--muted-color);">Starting Price</p>
+                        <p style="margin: 4px 0 0; font-size: 18px; font-weight: 600; color: var(--text-color);">RM
+                            XXX.XX</p>
+                    </div>
+                </div>
+
+                <!-- Summary List -->
+                <div class="summary-list"
+                    style="background: #fff; border: 1px solid var(--border-color); border-radius: 16px; padding: 16px;">
+                    <div class="summary-row">
+                        <span>Session Stock</span>
+                        <span class="summary-val">XXX unit</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Min Bid Increment</span>
+                        <span class="summary-val">RM XXX.XX</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Duration</span>
+                        <span class="summary-val">XXX days</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Second Cycle</span>
+                        <span class="summary-val disabled">Status</span>
+                    </div>
+                </div>
+
+                <!-- Start Button -->
+                <div class="fixed-bottom-action">
+                    <a href="index.html" class="primary-btn">Start Bid Session</a>
+                </div>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="goLive.html" class="nav-item active">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

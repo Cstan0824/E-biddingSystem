@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .alert-box-mono {
+            border: 1px solid var(--border-color);
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted-color);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            background: #f9f9f9;
+            /* Read-only feel */
+            color: var(--text-color);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header with Back -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 16px;">
+                    <a href="products.html" class="back-btn">Back</a>
+                    <div>
+                        <h1 style="font-size: 16px; font-weight: 600; margin: 0;">Update Product</h1>
+                    </div>
+                </div>
+
+
+
+                <!-- Image -->
+                <div
+                    style="width: 100%; aspect-ratio: 4/3; background: #eee; border-radius: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                    IMAGE
+                </div>
+
+                <!-- Form -->
+                <form>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" class="form-input" value="Product Name" disabled>
+                        <p style="font-size: 11px; color: var(--muted-color); margin: 4px 0 0;">Product name cannot be
+                            changed</p>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-input" rows="4" style="resize: none;">Product description</textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label">Starting Price (RM)</label>
+                        <input type="text" class="form-input" value="XXX.XX">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label">Category</label>
+                        <select class="form-input">
+                            <option>Category</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label class="form-label">Stock Quantity</label>
+                        <input type="number" class="form-input" value="0">
+                    </div>
+
+                    <button type="button" class="primary-btn"
+                        style="background: #fff; color: var(--text-color); border: 1px solid var(--border-color); cursor:pointer;">
+                        Update Product </button>
+                </form>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item active">Products</a>
+                <a href="goLive.html" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

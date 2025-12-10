@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-back {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 16px;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .header-actions {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .wishlist-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            /* Removed shadow for flatter B&W look */
+        }
+
+        .card-image {
+            height: 140px;
+            /* No background color for image container as per request for other pages too likely */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            border-radius: 4px;
+            padding: 4px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--text);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            /* Less rounded to match B&W aesthetic */
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .card-details {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+            color: var(--text);
+        }
+
+        .card-label {
+            font-size: 11px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .card-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 4px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="screen-header">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div style="display: flex; align-items: center;">
+                            <a href="index.html" class="header-back">Back</a>
+                            <h2>Saved Products</h2>
+                        </div>
+                        <span class="header-actions">No of Items</span>
+                    </div>
+                </div>
+
+                <div class="wishlist-grid">
+                    <div class="wishlist-card">
+                        <div class="card-image">
+                            <div class="delete-btn">Delete</div>
+                            <span class="status-badge">Bid State</span>
+                            IMAGE
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">Product Name</h3>
+                            <p class="card-label">Price Label</p>
+                            <p class="card-price">Price Value</p>
+                        </div>
+                    </div>
+
+                    <div class="wishlist-card">
+                        <div class="card-image">
+                            <div class="delete-btn">Delete</div>
+                            <span class="status-badge">Bid State</span>
+                            IMAGE
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">Product Name</h3>
+                            <p class="card-label">Price Label</p>
+                            <p class="card-price">Price Value</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text);
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--text);
+        }
+
+        .phone-input-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .country-code {
+            width: 80px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--text);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 24px;
+            cursor: pointer;
+        }
+
+        .header-back {
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 16px;
+            text-decoration: none;
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="screen-header">
+                    <div style="display: flex; align-items: center;">
+                        <a href="profile.html" class="header-back">back</a>
+                    </div>
+                </div>
+
+                <form action="profile.html">
+                    <div class="form-group">
+                        <label class="form-label">Full name</label>
+                        <input type="text" class="form-input" value="User Full Name">
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" value="User Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone number</label>
+                        <div class="phone-input-group">
+                            <input type="text" class="form-input country-code" value="XX">
+                            <input type="tel" class="form-input" value="(XXX) XXX-XXXX">
+                        </div>
+                    </div>
+
+
+
+
+
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html" aria-current="page">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bid History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .history-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            text-align: right;
+        }
+
+        .status-badge {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--text);
+            color: var(--text);
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .history-price {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .history-time {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .action-note {
+            font-size: 11px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .filter-scroll {
+            overflow-x: auto;
+            padding-bottom: 4px;
+            margin-bottom: 16px;
+        }
+
+        .filter-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="screen-header compact">
+                    <h1>My Bid History</h1>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search your bids..." aria-label="Search bids">
+                </div>
+
+                <div class="pill-group filter-scroll">
+                    <button class="pill active">All</button>
+                    <button class="pill">Status</button>
+                    <button class="pill">Status</button>
+                </div>
+
+                <div class="history-list">
+                    <!-- Won Item -->
+                    <a href="auction-won.html" style="text-decoration: none; color: inherit; display: block;">
+                        <article class="history-card">
+                            <div class="history-media">
+                                <div class="image-placeholder">IMAGE</div>
+                            </div>
+                            <div class="history-content">
+                                <h3>Product Name</h3>
+                                <p class="label">Bid State:</p>
+                                <div class="action-note">
+                                    Product State
+                                </div>
+                            </div>
+                            <div class="history-right">
+                                <span class="status-badge">Status</span>
+                                <span class="history-price">Bid Price</span>
+                                <span class="history-time">Bid Hosted Date</span>
+                            </div>
+                        </article>
+                    </a>
+
+                    <!-- Winning Item -->
+                    <article class="history-card">
+                        <div class="history-media">
+                            <div class="image-placeholder">IMAGE</div>
+                        </div>
+                        <div class="history-content">
+                            <h3>Product Name</h3>
+                            <p class="label">Bid State:</p>
+                            <div class="action-note">
+                                Product State
+                            </div>
+                        </div>
+                        <div class="history-right">
+                            <span class="status-badge">Status</span>
+                            <span class="history-price">Bid Price</span>
+                            <span class="history-time">Bid Hosted Date</span>
+                        </div>
+                    </article>
+
+                    <!-- Cancelled Item -->
+                    <article class="history-card">
+                        <div class="history-media">
+                            <div class="image-placeholder">IMAGE</div>
+                        </div>
+                        <div class="history-content">
+                            <h3>Product Name</h3>
+                            <p class="label">Bid State:</p>
+                            <div class="action-note">
+                                Product State
+                            </div>
+                        </div>
+                        <div class="history-right">
+                            <span class="status-badge">Status</span>
+                            <span class="history-price">Bid Price</span>
+                            <span class="history-time">Bid Hosted Date</span>
+                        </div>
+                    </article>
+
+                    <!-- Outbid Item -->
+                    <a href="product.html" style="text-decoration: none; color: inherit; display: block;">
+                        <article class="history-card">
+                            <div class="history-media">
+                                <div class="image-placeholder">IMAGE</div>
+                            </div>
+                            <div class="history-content">
+                                <h3>Product Name</h3>
+                                <p class="label">Bid State:</p>
+                                <div class="action-note">
+                                    Product State
+                                </div>
+                            </div>
+                            <div class="history-right">
+                                <span class="status-badge">Status</span>
+                                <span class="history-price">Bid Price</span>
+                                <span class="history-time">Bid Hosted Date</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html" aria-current="page">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

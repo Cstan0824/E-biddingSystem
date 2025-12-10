@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cancelled-alert {
+            background: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+
+        .cancelled-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #d32f2f;
+        }
+
+        .cancelled-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #d32f2f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .next-steps-box {
+            background: #ffcdd2;
+            /* Slightly darker pink/red */
+            background: rgba(255, 87, 34, 0.1);
+            /* Or maybe use the brand orange tint */
+            background: #ffecb3;
+            /* No, typical warning is red/orange */
+            background: #fff;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(211, 47, 47, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header with Back -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
+                    <a href="orders.html" class="back-btn">Back</a>
+                    <div>
+                        <h1 style="font-size: 16px; font-weight: 600; margin: 0;">Order Details</h1>
+                        <p style="font-size: 12px; color: var(--muted-color); margin: 0;">Order Ref No</p>
+                    </div>
+                </div>
+
+                <!-- Product Card -->
+                <div class="order-detail-card" style="display: flex; gap: 12px; padding: 12px;">
+                    <div class="card-image-area" style="width: 80px; height: 80px; position: relative;">
+                        <span class="pill-tag" style="top: 4px; left: 4px; font-size: 8px;">Category</span>
+                        IMAGE
+                    </div>
+                    <div style="flex: 1;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                            <h3 style="font-size: 14px; font-weight: 600; margin: 0;">Product Name</h3>
+                            <span
+                                style="background: #fff; color: var(--text-color); border: 1px solid var(--border-color); font-size: 10px; padding: 2px 6px; border-radius: 12px; display: flex; align-items: center; gap: 4px;">
+                                Cancelled
+                            </span>
+                        </div>
+                        <p style="font-size: 11px; color: var(--muted-color); margin: 0 0 4px;">Buyer Name</p>
+                        <p style="font-size: 14px; font-weight: 600; color: var(--text-color); margin: 0 0 8px;">RM
+                            XXX.XX</p>
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted-color);">
+                            <span>Order Time</span>
+                            <span>Quantity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cancelled Alert -->
+                <div class="cancelled-alert"
+                    style="background: #fff; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+                    <div class="cancelled-header"
+                        style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: var(--text-color);">
+                        <div class="cancelled-icon"
+                            style="width: 24px; height: 24px; border: 2px solid var(--text-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">
+                            ✕</div>
+                        <h3 style="font-size: 14px; font-weight: 600; margin: 0;">Order Cancelled</h3>
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-color); line-height: 1.5; margin-bottom: 12px;">
+                        This order was cancelled due to payment failure from the buyer. The buyer was unable to complete
+                        the payment within the required timeframe.
+                    </p>
+
+                    <div class="next-steps-box"
+                        style="background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; margin-top: 16px;">
+                        <h4 style="font-size: 12px; font-weight: 600; color: var(--text-color); margin: 0 0 4px;">What
+                            happens next?</h4>
+                        <p style="font-size: 11px; color: var(--text-color); margin: 0; line-height: 1.4;">
+                            You can start a new bidding session for this product to give other buyers a chance to bid.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <a href="goLive.html" class="primary-btn"
+                    style="background: #fff; color: var(--text-color); border: 1px solid var(--border-color); margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    Start Bid Session
+                </a>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="goLive.html" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

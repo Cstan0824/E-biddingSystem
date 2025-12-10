@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP - WinBid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="viewport">
+        <div class="status-bar">
+            <span>9:41</span>
+            <div style="display: flex; gap: 4px;">
+                <span>●</span><span>●</span><span>●</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="back-header">
+                <a href="index.html" class="back-link">Back</a>
+            </div>
+
+            <div class="logo-section">
+                <div class="logo-text">LOGO</div>
+            </div>
+
+            <!-- Stepper -->
+            <div class="stepper">
+                <div class="step-circle active">1</div>
+                <div class="step-line active"></div>
+                <div class="step-circle active">2</div>
+                <div class="step-line"></div>
+                <div class="step-circle">3</div>
+            </div>
+
+            <div style="height: 24px;"></div>
+
+            <h1 class="page-title">Enter OTP</h1>
+            <p class="page-subtitle" style="margin-left: 20px; margin-right: 20px;">
+                We've sent a 6-digit code to <br>
+                <span style="color: #333; font-weight: 500;">User Email</span>
+            </p>
+
+            <p style="text-align: center; font-size: 13px; color: var(--muted-color); margin-bottom: 12px;">
+                Enter 6-digit OTP
+            </p>
+
+            <div class="otp-container">
+                <!-- Using 6 boxes as per mockup -->
+                <input type="text" class="otp-box" maxlength="1">
+                <input type="text" class="otp-box" maxlength="1">
+                <input type="text" class="otp-box" maxlength="1">
+                <input type="text" class="otp-box" maxlength="1">
+                <input type="text" class="otp-box" maxlength="1">
+                <input type="text" class="otp-box" maxlength="1">
+            </div>
+
+            <p style="text-align: center; font-size: 13px; color: var(--muted-color); margin-bottom: 24px;">
+                Resend OTP in <span style="color: var(--primary-color);">59s</span>
+            </p>
+
+            <button type="button" class="btn-primary" onclick="location.href='reset-password.html'">Verify OTP</button>
+
+            <a href="forgot-password.html" class="footer-link"
+                style="text-align: center; display: block; margin-bottom: 24px;">Change Email</a>
+
+            <p class="footer-text" style="font-size: 12px; margin-top: auto;">
+                Resetting password for Buyer account
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

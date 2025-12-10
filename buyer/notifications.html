@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-back {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 16px;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .notification-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 4px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+
+        .unread-count {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .control-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .control-link {
+            font-size: 13px;
+            color: var(--text);
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .notif-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 12px;
+            position: relative;
+        }
+
+        .notif-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            font-weight: bold;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text);
+        }
+
+        .notif-content {
+            flex: 1;
+        }
+
+        .notif-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: var(--text);
+            padding-right: 16px;
+        }
+
+        .notif-body {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.4;
+            margin: 0 0 8px 0;
+        }
+
+        .notif-time {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .unread-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--text);
+            /* Black dot for unread */
+            border-radius: 50%;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="screen-header">
+                    <div style="display: flex; align-items: center;">
+                        <a href="index.html" class="header-back">Back</a>
+                        <h2>Notifications</h2>
+                    </div>
+                </div>
+
+                <div class="notification-controls">
+                    <span class="unread-count">No of unread notifications</span>
+                    <div class="control-actions">
+                        <span class="control-link">Mark all as read</span>
+                        <span class="control-link">Clear all</span>
+                    </div>
+                </div>
+
+                <!-- Notif 1 -->
+                <div class="notif-card">
+                    <div class="notif-icon">Icon</div>
+                    <div class="notif-content">
+                        <h3 class="notif-title">Notification Title</h3>
+                        <p class="notif-body">Notification Body</p>
+                        <span class="notif-time">Notification Time</span>
+                    </div>
+                    <div class="unread-dot"></div>
+                </div>
+
+                <!-- Notif 2 -->
+                <div class="notif-card">
+                    <div class="notif-icon">Icon</div>
+                    <div class="notif-content">
+                        <h3 class="notif-title">Notification Title</h3>
+                        <p class="notif-body">Notification Body</p>
+                        <span class="notif-time">Notification Time</span>
+                    </div>
+                    <div class="unread-dot"></div>
+                </div>
+
+                <!-- Notif 3 -->
+                <div class="notif-card">
+                    <div class="notif-icon">Icon</div>
+                    <div class="notif-content">
+                        <h3 class="notif-title">Notification Title</h3>
+                        <p class="notif-body">Notification Body</p>
+                        <span class="notif-time">Notification Time</span>
+                    </div>
+                    <div class="unread-dot"></div>
+                </div>
+
+                <!-- Notif 4 -->
+                <div class="notif-card">
+                    <div class="notif-icon">Icon</div>
+                    <div class="notif-content">
+                        <h3 class="notif-title">Notification Title</h3>
+                        <p class="notif-body">Notification Body</p>
+                        <span class="notif-time">Notification Time</span>
+                    </div>
+                    <div class="unread-dot"></div>
+                </div>
+
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

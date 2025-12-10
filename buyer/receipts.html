@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Receipts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-back {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 16px;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Combined Card Container */
+        .receipts-container-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Summary Section (Top of Card) */
+        .summary-section {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .summary-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+            color: var(--text);
+        }
+
+        .summary-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* Receipt Item (Bottom of Card) */
+        .receipt-item {
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .receipt-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .receipt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .receipt-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            color: var(--text);
+        }
+
+        .receipt-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .receipt-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .receipt-date {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .receipt-status {
+            font-size: 13px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="screen-header">
+                    <div style="display: flex; align-items: center;">
+                        <a href="profile.html" class="header-back">Back</a> <!-- Text label -->
+                    </div>
+                </div>
+
+                <div class="receipts-container-card">
+                    <div class="summary-section">
+                        <div class="summary-icon">ICON</div>
+                        <div>
+                            <h2 class="summary-title">Receipts Category</h2>
+                            <p class="summary-subtitle">Total Receipts Count</p>
+                        </div>
+                    </div>
+
+                    <div class="receipt-item" onclick="window.location.href='delivery-tracking.html'">
+                        <div class="receipt-header">
+                            <h3 class="receipt-title">Product Name</h3>
+                            <span class="receipt-price">Product Price</span>
+                        </div>
+                        <div class="receipt-footer">
+                            <span class="receipt-date">Date</span>
+                            <span class="receipt-status">Status</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

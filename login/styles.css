@@ -1,0 +1,326 @@
+:root {
+    --primary-color: #333; /* Black */
+    --text-color: #333;
+    --muted-color: #757575;
+    --border-color: #e0e0e0;
+    --bg-color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.viewport {
+    width: 375px;
+    height: 812px;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-bar {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logo-img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+    /* Placeholder for hammer icon */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238d6e63"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-5h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"/></svg>') no-repeat center;
+    background-size: contain; 
+} 
+/* Better Gavel Icon if possible */
+
+.logo-text {
+    font-weight: 800;
+    color: #454545; /* Brownish */
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: var(--muted-color);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Role Toggler */
+.role-toggler {
+    display: flex;
+    padding: 4px;
+    margin-bottom: 24px;
+    gap: 10px; /* Added spacing */
+}
+
+.role-btn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    background: transparent;
+    color: var(--muted-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.role-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: none;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: var(--muted-color);
+    font-size: 18px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px; /* Removed left padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    color: var(--muted-color);
+    cursor: pointer;
+}
+
+.forgot-link {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+
+.Divider {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    color: var(--muted-color);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.Divider::before, .Divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.Divider::before { margin-right: 12px; }
+.Divider::after { margin-left: 12px; }
+
+.btn-outline {
+    width: 100%;
+    padding: 14px;
+    background: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted-color);
+}
+
+.footer-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Stepper (Forgot Password) */
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #eee;
+    color: var(--muted-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.step-circle.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.step-line {
+    width: 40px;
+    height: 3px;
+    background: #eee;
+    margin: 0 8px;
+    border-radius: 2px;
+}
+
+.step-line.active {
+    background: var(--primary-color);
+}
+
+.icon-circle-lg {
+    width: 64px;
+    height: 64px;
+    background: #fff3e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 28px;
+    margin: 0 auto 16px;
+}
+
+/* OTP Input */
+.otp-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.otp-box {
+    width: 40px;
+    height: 48px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+}
+
+.otp-box:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-header {
+    margin-bottom: 24px;
+}
+.back-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

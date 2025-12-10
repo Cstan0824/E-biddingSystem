@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Profile Header -->
+                <div class="seller-profile-header">
+                    <div class="s-profile-cover"></div>
+                    <div class="s-profile-avatar-container">
+                        <div class="s-profile-avatar">
+                            IMAGE
+                        </div>
+                        <button class="s-profile-edit-btn">Edit</button>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="seller-stats-grid">
+                    <div class="s-stat-card">
+                        <div class="s-stat-value">Total Bids</div>
+                    </div>
+                    <div class="s-stat-card">
+                        <div class="s-stat-value">Revenue</div>
+                    </div>
+                </div>
+
+                <!-- Menu -->
+                <div class="seller-menu">
+                    <button class="s-menu-item" style="justify-content: center;"
+                        onclick="window.location.href='edit-profile.html'">
+                        <span>Edit Profile</span>
+                    </button>
+                    <button class="s-menu-item" style="justify-content: center;">
+                        <span>Log out</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="#" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item active">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

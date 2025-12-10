@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WinBid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="viewport">
+        <div class="status-bar">
+            <span>9:41</span>
+            <div style="display: flex; gap: 4px;">
+                <span>●</span><span>●</span><span>●</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="logo-section" style="margin-top: 20px;">
+                <div class="logo-text">LOGO</div>
+            </div>
+
+            <h1 class="page-title">Welcome Back</h1>
+            <p class="page-subtitle">Sign in to continue</p>
+
+            <div class="role-toggler">
+                <button class="role-btn active" onclick="switchRole('buyer')">
+                    Buyer
+                </button>
+                <button class="role-btn" onclick="switchRole('seller')">
+                    Seller
+                </button>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email"
+                            value="buyer@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password"
+                            value="123456">
+                        <span class="password-toggle" style="font-size: 12px;" onclick="togglePassword()">Show</span>
+                    </div>
+                </div>
+
+                <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+
+                <button type="button" class="btn-primary" onclick="handleLogin()">Sign In</button>
+            </form>
+
+            <p class="footer-text">
+                Don't have an account? <a href="signup.html" class="footer-link">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let currentRole = 'buyer';
+
+        function switchRole(role) {
+            currentRole = role;
+            const btns = document.querySelectorAll('.role-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            if (role === 'buyer') {
+                btns[0].classList.add('active');
+                // Pre-fill for demo convenience
+                document.getElementById('email').value = 'buyer@gmail.com';
+            } else {
+                btns[1].classList.add('active');
+                // Pre-fill for demo convenience
+                document.getElementById('email').value = 'seller@gmail.com';
+            }
+        }
+
+        function togglePassword() {
+            const passInput = document.getElementById('password');
+            const toggleBtn = document.querySelector('.password-toggle');
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                toggleBtn.textContent = 'Hide';
+            } else {
+                passInput.type = 'password';
+                toggleBtn.textContent = 'Show';
+            }
+        }
+
+        function handleLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                alert('Please enter both email and password.');
+                return;
+            }
+
+            // Mock Validation
+            if (currentRole === 'buyer') {
+                if (email === 'buyer@gmail.com' && password === '123456') {
+                    window.location.href = '../buyer/index.html';
+                } else {
+                    alert('Invalid Buyer credentials! Try buyer@gmail.com / 123456');
+                }
+            } else {
+                if (email === 'seller@gmail.com' && password === '123456') {
+                    window.location.href = '../seller/index.html';
+                } else {
+                    alert('Invalid Seller credentials! Try seller@gmail.com / 123456');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

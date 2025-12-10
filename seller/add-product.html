@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload New Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
+                    <a href="products.html" class="back-btn">Back</a>
+                    <h1 style="font-size: 18px; font-weight: 600; margin: 0;">Upload New Product</h1>
+                </div>
+
+                <form class="edit-profile-form">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" placeholder="Product name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea placeholder="Description" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select style="width: 100%;">
+                            <option>Category</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Starting Price (RM) *</label>
+                        <input type="number" placeholder="RM XX.XX">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Minimum Increment (RM) *</label>
+                        <input type="number" placeholder="RM XX.XX">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Images</label>
+                        <div class="upload-box" style="cursor: pointer;">
+                            <span style="font-size: 24px;">+</span>
+                            <span style="font-size: 12px;">Upload Image</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="button" class="primary-btn" onclick="location.href='products.html'">Upload New
+                        Product</button>
+
+                    <!-- Spacer for Scrolling -->
+                    <div style="height: 80px;"></div>
+                </form>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item active">Products</a>
+                <a href="goLive.html" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

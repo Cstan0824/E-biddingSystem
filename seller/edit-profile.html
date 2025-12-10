@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted-color);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .phone-input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .phone-prefix {
+            background: #f9f9f9;
+            padding: 12px;
+            font-size: 14px;
+            border-right: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .phone-input-group .form-input {
+            border: none;
+            border-radius: 0;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header with Back -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
+                    <a href="profile.html" class="back-btn">Back</a>
+                    <!-- No title in mockup, just back arrow -->
+                </div>
+
+                <!-- Form -->
+                <form action="profile.html">
+                    <div class="form-group">
+                        <label class="form-label">Full name</label>
+                        <input type="text" class="form-input" placeholder="User Full Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="User Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone number</label>
+                        <div class="phone-input-group">
+                            <span class="phone-prefix">MY +XX</span>
+                            <input type="tel" class="form-input" placeholder="User Phone Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Company address</label>
+                        <textarea class="form-input" rows="4" placeholder="User Company Address"
+                            style="resize: none;"></textarea>
+                    </div>
+
+                    <button type="submit" class="primary-btn"
+                        style="background: #fff; color: var(--text-color); border: 1px solid var(--border-color); margin-top: 24px;">SUBMIT</button>
+                </form>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="goLive.html" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item active">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

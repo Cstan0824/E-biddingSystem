@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Bid Session - Step 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header with Back -->
+                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
+                    <a href="goLive.html" class="back-btn">Back</a>
+                    <div>
+                        <h1 style="font-size: 16px; font-weight: 600; margin: 0;">Start Bid Session</h1>
+                        
+                    </div>
+                </div>
+
+                <!-- Stepper -->
+                <div class="stepper-container">
+                    <div class="step completed">
+                        <div class="step-circle">Done</div>
+                        <span class="step-label">Select</span>
+                    </div>
+                    <div class="step-line filled"></div>
+                    <div class="step active">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Duration</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+
+                <!-- Step Title -->
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                    <div class="step-indicator-small">2</div>
+                    <h2 style="font-size: 14px; font-weight: 500; margin: 0;">Set Session Duration</h2>
+                </div>
+                <p style="font-size: 12px; color: var(--muted-color); margin: 0 0 16px 28px;">How long should the
+                    auction run?</p>
+
+                <!-- Duration Grid -->
+                <div class="duration-grid">
+                    <button class="duration-card">
+                        <span class="d-val">Day</span>
+                    </button>
+                    <button class="duration-card">
+                        <span class="d-val">Day</span>
+                    </button>
+                    <button class="duration-card active">
+                        <span class="d-val">Day</span>
+                    </button>
+                    <button class="duration-card">
+                        <span class="d-val">Custom</span>
+                    </button>
+                </div>
+
+                <!-- Toggle -->
+                <div class="form-card">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="checkbox-box marked"></div> <!-- Visual for checked box per mock -->
+                        <div>
+                            <h3 style="font-size: 13px; font-weight: 500; margin: 0 0 4px;">Enable Automatic Second
+                                Cycle</h3>
+                            <p style="font-size: 11px; color: var(--muted-color); margin: 0;">If no one bids,
+                                automatically start a second auction cycle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stock Input -->
+                <div class="form-card">
+                    <label
+                        style="font-size: 13px; color: var(--text-color); margin-bottom: 8px; display: block;">Session
+                        Stock Quantity</label>
+                    <input type="text" value="XXX" class="form-input">
+                    <p style="font-size: 11px; color: var(--muted-color); margin: 4px 0 0;">No of available stock</p>
+                </div>
+
+                <!-- Next Button -->
+                <div class="fixed-bottom-action">
+                    <a href="goLive-step3.html" class="primary-btn">Next</a>
+                </div>
+
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="goLive.html" class="nav-item active">Start Session</a>
+                <a href="orders.html" class="nav-item">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <!-- Status Bar -->
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <!-- Header -->
+                <div class="screen-header">
+                    <h1 style="font-size: 24px; font-weight: 600; margin: 0;">Orders</h1>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        Search orders...
+                    </div>
+                </div>
+                <!-- Filter Chips -->
+                <div class="filter-container">
+                    <button class="filter-chip active">Status</button>
+                    <button class="filter-chip">Status</button>
+                    <button class="filter-chip">Status</button>
+                    <button class="filter-chip">Status</button>
+                </div>
+                <div class="listings">
+                    <!-- Order 1 -->
+                    <article class="card">
+                        <div class="card-image-area" style="cursor: pointer;"
+                            onclick="window.location.href='order-details.html'">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <div class="card-row">
+                                    <h3 class="card-title">Product Name</h3>
+                                    <span class="status-badge">Status</span>
+                                </div>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Buyer Name</p>
+                                    <p class="card-price">RM XXX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span>Order Date Time</span>
+                                <span>Order Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Order 2 -->
+                    <article class="card">
+                        <div class="card-image-area" style="cursor: pointer;"
+                            onclick="window.location.href='order-detail-cancelled.html'">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <div class="card-row">
+                                    <h3 class="card-title">Product Name</h3>
+                                    <span class="status-badge"
+                                        style="background: #ffebee; color: #d32f2f; border: 1px solid #ffcdd2;">Cancelled</span>
+                                </div>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Buyer Name</p>
+                                    <p class="card-price">RM XXX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span>Order Date Time</span>
+                                <span>Order Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Order 3 -->
+                    <article class="card">
+                        <div class="card-image-area" style="cursor: pointer;"
+                            onclick="window.location.href='order-details.html'">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <div class="card-row">
+                                    <h3 class="card-title">Product Name</h3>
+                                    <span class="status-badge">Status</span>
+                                </div>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Buyer Name</p>
+                                    <p class="card-price">RM XXX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span>Order Date Time</span>
+                                <span>Order Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Order 4 -->
+                    <article class="card">
+                        <div class="card-image-area" style="cursor: pointer;"
+                            onclick="window.location.href='order-details.html'">
+                            <span class="pill-tag">Category</span>
+                            IMAGE
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <div class="card-row">
+                                    <h3 class="card-title">Product Name</h3>
+                                    <span class="status-badge">Status</span>
+                                </div>
+                                <div class="card-meta-group">
+                                    <p class="card-label">Buyer Name</p>
+                                    <p class="card-price">RM XXX.XX</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span>Order Date Time</span>
+                                <span>Order Quantity</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="goLive.html" class="nav-item">Start Session</a>
+                <a href="orders.html" class="nav-item active">Orders</a>
+                <a href="profile.html" class="nav-item">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>

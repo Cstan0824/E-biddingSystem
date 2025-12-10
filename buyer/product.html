@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-image-container {
+            height: 300px;
+            /* background removed */
+            position: relative;
+            margin: -24px -12px 24px -12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+        }
+
+        .image-actions {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            right: 24px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .circle-btn {
+            height: 40px;
+            padding: 0 16px;
+            border-radius: 20px;
+            /* Pill shape for text */
+            background: white;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .image-dots {
+            position: absolute;
+            bottom: 24px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--text);
+        }
+
+        .dot.active {
+            background: var(--text);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 0 12px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        .product-subtitle {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+        }
+
+        .price-label {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .price-value {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .bidder-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .bidder-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bidder-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+        }
+
+        .bidder-name {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .bidder-meta {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .bid-options {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .bid-option {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: white;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .bid-option.custom {
+            background: var(--text);
+            color: white;
+            border-color: var(--text);
+        }
+
+        .place-bid-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--text);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .wallet-balance {
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="product-image-container">
+                    <div class="image-actions">
+                        <a href="index.html" class="circle-btn">Back</a>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="circle-btn">Save</button>
+                            <button class="circle-btn">View</button>
+                        </div>
+                    </div>
+                    PRODUCT IMAGE
+                    <div class="image-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1 class="product-title">Product Name</h1>
+                    <div class="product-subtitle">
+                        <span style="width: 6px; height: 6px; background: var(--text); border-radius: 50%;"></span>
+                        Platform Name
+                    </div>
+
+                    <div class="price-grid">
+                        <div>
+                            <span class="price-label">Starting price</span>
+                            <div class="price-value">
+                                <div class="bidder-avatar">IMG</div>
+                                Price
+                            </div>
+                        </div>
+                        <div>
+                            <span class="price-label">Current Bid Price</span>
+                            <div class="price-value" style="color: var(--text);">Price</div>
+                        </div>
+                    </div>
+
+                    <div class="live-status">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="width: 8px; height: 8px; background: var(--text); border-radius: 50%;"></span>
+                            Status
+                        </div>
+                        <span style="color: var(--text);">Time Left</span>
+                    </div>
+
+                    <div class="bidder-row">
+                        <div class="bidder-info">
+                            <div class="bidder-avatar">User</div>
+                            <div>
+                                <div class="bidder-name">User Name</div>
+                                <div class="bidder-meta">Bidder Status</div>
+                            </div>
+                        </div>
+                        <div style="font-weight: 600;">Price</div>
+                    </div>
+
+                    <div class="bidder-row">
+                        <div class="bidder-info">
+                            <div class="bidder-avatar">User</div>
+                            <div>
+                                <div class="bidder-name">User Name</div>
+                            </div>
+                        </div>
+                        <div style="font-weight: 600;">Price</div>
+                    </div>
+
+                    <div class="bid-options">
+                        <button class="bid-option">Increment</button>
+                        <button class="bid-option">Increment</button>
+                        <button class="bid-option">Increment</button>
+                        <button class="bid-option custom">Custom</button>
+                    </div>
+
+                    <button class="place-bid-btn" onclick="openModal()">Place bid for Price</button>
+                    <p class="wallet-balance">Wallet Balance: Value</p>
+                </div>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Modal Overlay -->
+    <div id="confirmModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h2 class="modal-title">Confirm Bid</h2>
+            <p class="modal-text">
+                You have placed a bid for RM 861.00.<br>
+                Should we place this as your Bid?
+            </p>
+            <div class="modal-actions">
+                <button class="modal-btn primary" onclick="closeModal()">Yes, Place My Bid</button>
+                <button class="modal-btn secondary" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 24px;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 24px;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-icon {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--text);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: var(--text);
+        }
+
+        .modal-text {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0 0 32px 0;
+            line-height: 1.5;
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-btn.primary {
+            background: var(--text);
+            color: white;
+            border: 1px solid var(--text);
+        }
+
+        .modal-btn.secondary {
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--text);
+        }
+    </style>
+
+    <script>
+        function openModal() {
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

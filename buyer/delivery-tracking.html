@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Tracking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-section {
+            background: white;
+            padding-bottom: 24px;
+        }
+
+        .header-back {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .tracking-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            gap: 16px;
+        }
+
+        .product-thumb {
+            width: 72px;
+            height: 72px;
+            background: #f1f1f1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            color: var(--text);
+            /* Black */
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .status-pill {
+            background: #f0f0f0;
+            /* B&W: Light gray instead of light orange */
+            color: var(--text);
+            /* B&W: Dark text instead of orange */
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 99px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .status-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 24px 0;
+        }
+
+        .stepper {
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 32px;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Connecting Line */
+        .step-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            /* Aligned with center of circle/icon */
+            top: 24px;
+            bottom: -32px;
+            width: 2px;
+            background: #f0f0f0;
+            z-index: 1;
+        }
+
+        .step-item:last-child::before {
+            display: none;
+        }
+
+        /* Step circle/icon background */
+        .step-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            z-index: 2;
+            background: #f0f0f0;
+            color: var(--muted);
+        }
+
+        /* Active State */
+        .step-item.active .step-icon {
+            background: var(--text);
+            /* Black */
+            color: white;
+        }
+
+        .step-item.active::before {
+            /* If we wanted the line to be colored for completed steps, handled via JS usually, sticking to simple grey for line or standard B&W */
+        }
+
+        /* The reference shows a solid line for completed? We'll stick to simple connection. */
+
+        .step-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .step-item.active .step-title {
+            color: var(--text);
+        }
+
+        .step-item:not(.active) .step-title {
+            color: var(--muted);
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .estimate-card {
+            border: 1px solid var(--border);
+            /* B&W: Border instead of orange outline */
+            background: #fafafa;
+            /* B&W: Light gray bg */
+            border-radius: 18px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .estimate-icon {
+            font-size: 20px;
+            color: var(--text);
+        }
+
+        .estimate-label {
+            display: block;
+            font-size: 12px;
+            color: var(--muted);
+            /* B&W: Muted text */
+            margin-bottom: 2px;
+        }
+
+        .estimate-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            /* B&W: Black text */
+        }
+    </style>
+</head>
+
+<body>
+    <main class="viewport">
+        <section class="device-shell">
+            <header class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </header>
+
+            <section class="screen">
+                <div class="header-section">
+                    <a href="receipts.html" class="header-back">Back</a>
+                    <h1 style="margin:0; font-size: 20px;">Delivery Tracking</h1>
+                </div>
+
+                <div class="tracking-card">
+                    <div class="product-thumb">IMG</div>
+                    <div class="product-info">
+                        <div class="product-name">Product Name</div>
+                        <div class="product-price">Price</div>
+                        <span class="status-pill">Status</span>
+                    </div>
+                </div>
+
+                <div class="status-section">
+                    <h2 class="section-title">Order Status</h2>
+                    <div class="stepper">
+                        <!-- Step 1: Active -->
+                        <div class="step-item">
+                            <div class="step-icon">Icon</div>
+                            <div class="step-content">
+                                <div class="step-title">Status</div>
+                                <p class="step-desc">Description</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Processing (Active/Current?) Let's make it look like "In Progress" style or just active. Ref has check for 1st. 
+                             Ref has icons for others: box, truck, pin.
+                        -->
+                        <div class="step-item"> <!-- Assuming current status -->
+                            <div class="step-icon">Icon</div>
+                            <div class="step-content">
+                                <div class="step-title" style="color:var(--text)">Status</div>
+                                <p class="step-desc">Description</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Shipped -->
+                        <div class="step-item">
+                            <div class="step-icon">Icon</div>
+                            <div class="step-content">
+                                <div class="step-title">Status</div>
+                                <p class="step-desc">Description</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Delivered -->
+                        <div class="step-item">
+                            <div class="step-icon">Icon</div>
+                            <div class="step-content">
+                                <div class="step-title">Status</div>
+                                <p class="step-desc">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estimate-card">
+                    <div class="estimate-icon">🕒</div>
+                    <div>
+                        <span class="estimate-label">Estimated Delivery</span>
+                        <span class="estimate-value">3-5 business days</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="history.html">Bidding</a>
+                <a href="wallet.html">Wallet</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </section>
+    </main>
+</body>
+
+</html>
