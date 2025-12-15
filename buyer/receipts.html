@@ -121,50 +121,79 @@
 <body>
     <main class="viewport">
         <section class="device-shell">
-            <header class="status-bar">
-                <span class="time">9:41</span>
-                <div class="status-icons">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
+
 
             <section class="screen">
-                <div class="screen-header">
-                    <div style="display: flex; align-items: center;">
-                        <a href="profile.html" class="header-back">Back</a> <!-- Text label -->
-                    </div>
+                <div class="screen-header" style="justify-content: flex-start; gap: 8px;">
+                    <a href="profile.html" class="header-back">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                    </a>
+                    <h1 style="margin: 0; font-size: 18px; font-weight: 600;">My Receipts</h1>
                 </div>
 
                 <div class="receipts-container-card">
                     <div class="summary-section">
-                        <div class="summary-icon">ICON</div>
+                        <div class="summary-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <line x1="8" y1="6" x2="16" y2="6"></line>
+                                <line x1="8" y1="10" x2="16" y2="10"></line>
+                                <path d="M16 14h-8"></path>
+                                <path d="M12 18h-4"></path>
+                            </svg>
+                        </div>
                         <div>
-                            <h2 class="summary-title">Receipts Category</h2>
-                            <p class="summary-subtitle">Total Receipts Count</p>
+                            <h2 class="summary-title">All Receipts</h2>
+                            <p class="summary-subtitle">Total receipts count</p>
                         </div>
                     </div>
 
-                    <div class="receipt-item" onclick="window.location.href='delivery-tracking.html'">
+                    <div class="receipt-item" onclick="window.location.href='receipt-detail.html'">
                         <div class="receipt-header">
                             <h3 class="receipt-title">Product Name</h3>
-                            <span class="receipt-price">Product Price</span>
+                            <span class="receipt-price">Price Amount</span>
                         </div>
                         <div class="receipt-footer">
                             <span class="receipt-date">Date</span>
-                            <span class="receipt-status">Status</span>
+                            <span class="receipt-status">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="receipt-item" onclick="window.location.href='receipt-detail.html'">
+                        <div class="receipt-header">
+                            <h3 class="receipt-title">Product Name</h3>
+                            <span class="receipt-price">Price Amount</span>
+                        </div>
+                        <div class="receipt-footer">
+                            <span class="receipt-date">Date</span>
+                            <span class="receipt-status">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="receipt-item" onclick="window.location.href='receipt-detail.html'">
+                        <div class="receipt-header">
+                            <h3 class="receipt-title">Product Name</h3>
+                            <span class="receipt-price">Price Amount</span>
+                        </div>
+                        <div class="receipt-footer">
+                            <span class="receipt-date">Date</span>
+                            <span class="receipt-status">Paid</span>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <nav class="bottom-nav" aria-label="Primary">
-                <a href="index.html">Home</a>
-                <a href="history.html">Bidding</a>
-                <a href="wallet.html">Wallet</a>
-                <a href="profile.html">Profile</a>
-            </nav>
+                <nav class="bottom-nav" aria-label="Primary">
+                    <a href="index.html">Home</a>
+                    <a href="history.html">Active</a>
+                    <a href="receipts.html" class="active">History</a>
+                    <a href="wallet.html">Wallet</a>
+                    <a href="profile.html">Profile</a>
+                </nav>
+            </section>
         </section>
     </main>
 </body>

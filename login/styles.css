@@ -1,9 +1,11 @@
 :root {
     --primary-color: #333; /* Black */
+    --accent-color: #ff5722; /* Orange */
     --text-color: #333;
     --muted-color: #757575;
     --border-color: #e0e0e0;
-    --bg-color: #fff;
+    --bg-color: #f5f5f5;
+    --card-bg: #fff;
 }
 
 body {
@@ -28,299 +30,353 @@ body {
     flex-direction: column;
 }
 
-.status-bar {
-    height: 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.content {
+.screen {
     flex: 1;
-    padding: 24px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    padding: 24px;
+    position: relative;
 }
 
-.logo-section {
+/* Header */
+.screen-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Stepper Modern */
+.stepper-modern {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding: 0 12px;
+    position: relative;
+}
+
+.stepper-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+    width: 80px;
 }
 
-.logo-img {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 8px;
-    /* Placeholder for hammer icon */
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238d6e63"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-5h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"/></svg>') no-repeat center;
-    background-size: contain; 
-} 
-/* Better Gavel Icon if possible */
-
-.logo-text {
-    font-weight: 800;
-    color: #454545; /* Brownish */
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
-.page-title {
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 8px;
-    color: var(--text-color);
-}
-
-.page-subtitle {
-    font-size: 14px;
-    color: var(--muted-color);
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-/* Role Toggler */
-.role-toggler {
-    display: flex;
-    padding: 4px;
-    margin-bottom: 24px;
-    gap: 10px; /* Added spacing */
-}
-
-.role-btn {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    border: none;
-    background: transparent;
-    color: var(--muted-color);
+.step-circle-m {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #9e9e9e;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
-.role-btn.active {
-    background: var(--primary-color);
+.stepper-item.active .step-circle-m {
+    background: var(--accent-color);
     color: #fff;
-    box-shadow: none;
+    box-shadow: 0 4px 8px rgba(255, 87, 34, 0.2);
 }
 
-/* Forms */
-.form-group {
-    margin-bottom: 16px;
+.step-label-m {
+    font-size: 11px;
+    color: #9e9e9e;
+    text-align: center;
 }
 
-.form-label {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 8px;
-    color: var(--text-color);
+.stepper-item.active .step-label-m {
+    color: var(--accent-color);
     font-weight: 500;
 }
 
-.input-wrapper {
+.stepper-line-bg {
+    position: absolute;
+    top: 18px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+/* Search Bar Modern */
+.search-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-input-container {
+    flex: 1;
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.input-icon {
+.search-icon-s {
     position: absolute;
-    left: 16px;
-    color: var(--muted-color);
-    font-size: 18px;
+    left: 14px;
+    color: #9e9e9e;
+    font-size: 16px;
 }
 
-.form-input {
+.search-input-modern {
     width: 100%;
-    padding: 14px 16px; /* Removed left padding for icon */
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    font-size: 14px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-.form-input:focus {
-    border-color: var(--primary-color);
-}
-
-.password-toggle {
-    position: absolute;
-    right: 16px;
-    color: var(--muted-color);
-    cursor: pointer;
-}
-
-.forgot-link {
-    display: block;
-    text-align: right;
-    font-size: 13px;
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-bottom: 24px;
-    font-weight: 500;
-}
-
-/* Buttons */
-.btn-primary {
-    width: 100%;
-    padding: 16px;
-    background: var(--primary-color);
-    color: #fff;
+    padding: 12px 12px 12px 40px;
+    background: #f5f5f5;
     border: none;
     border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 24px;
-}
-
-.Divider {
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-    color: var(--muted-color);
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.Divider::before, .Divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border-color);
-}
-
-.Divider::before { margin-right: 12px; }
-.Divider::after { margin-left: 12px; }
-
-.btn-outline {
-    width: 100%;
-    padding: 14px;
-    background: #fff;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 12px;
+    font-family: inherit;
     font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 24px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    box-sizing: border-box;
-}
-
-.footer-text {
-    text-align: center;
-    font-size: 14px;
-    color: var(--muted-color);
-}
-
-.footer-link {
-    color: var(--primary-color);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-/* Stepper (Forgot Password) */
-.stepper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 32px;
-}
-
-.step-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #eee;
-    color: var(--muted-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.step-circle.active {
-    background: var(--primary-color);
-    color: #fff;
-}
-
-.step-line {
-    width: 40px;
-    height: 3px;
-    background: #eee;
-    margin: 0 8px;
-    border-radius: 2px;
-}
-
-.step-line.active {
-    background: var(--primary-color);
-}
-
-.icon-circle-lg {
-    width: 64px;
-    height: 64px;
-    background: #fff3e0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 28px;
-    margin: 0 auto 16px;
-}
-
-/* OTP Input */
-.otp-container {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 24px;
-}
-
-.otp-box {
-    width: 40px;
-    height: 48px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
+    color: var(--text-color);
     outline: none;
 }
 
-.otp-box:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.back-header {
-    margin-bottom: 24px;
-}
-.back-link {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    font-weight: 500;
+.filter-btn {
+    width: 44px;
+    height: 44px;
+    background: #f5f5f5;
+    border-radius: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Category Pills */
+.category-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.cat-pill {
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #666;
+    border: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.cat-pill.active {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.2);
+}
+
+/* Product Card Horizontal */
+.product-card-h {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.product-card-h:active {
+    transform: scale(0.98);
+}
+
+.prod-img-box {
+    width: 80px;
+    height: 80px;
+    background: #fff8e1; /* Light yellow bg for contrast */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.prod-img-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #333; /* Placeholder for headphones */
+    border-radius: 8px;
+}
+
+.tag-overlay {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--accent-color);
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.prod-details {
+    flex: 1;
+}
+
+.prod-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+.prod-meta-label {
+    font-size: 11px;
+    color: #9e9e9e;
+    margin-bottom: 2px;
+}
+
+.prod-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.prod-stock {
+    font-size: 11px;
+    color: #9e9e9e;
+    text-align: right;
+    margin-top: -16px;
+}
+
+/* Fixed Bottom Button */
+.fixed-bottom-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px 32px;
+    background: linear-gradient(to top, #fff 80%, rgba(255,255,255,0));
+    z-index: 100;
+}
+
+.btn-block-disabled {
+    width: 100%;
+    padding: 16px;
+    background: #e0e0e0;
+    color: #9e9e9e;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: not-allowed;
+}
+
+.btn-block-active {
+    background: #e0e0e0; /* Default grey as per image until selected */
+    color: #9e9e9e;
+}
+
+/* Additional Styles for Product Page */
+
+/* Header Notification */
+.header-icon-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+/* Active Badge */
+.status-badge-active {
+    background: #e8f5e9;
+    color: #4caf50; /* Green */
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+/* Dual Price Display */
+.price-row {
+    display: flex;
+    align-items: baseline;
     gap: 4px;
+    font-size: 14px;
+}
+
+.price-starting {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.price-divider {
+    color: #9e9e9e;
+}
+
+.price-current {
+    color: #4caf50; /* Green for active/current price */
+    font-weight: 600;
+}
+
+.bid-count {
+    font-size: 10px;
+    color: #9e9e9e;
+    text-align: right;
+}
+
+/* Floating Action Button */
+.fab-container {
+    position: absolute;
+    bottom: 90px; /* Above bottom nav */
+    right: 24px;
+    z-index: 10;
+}
+
+.fab-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.fab-btn:active {
+    transform: scale(0.95);
 }

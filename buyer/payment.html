@@ -241,14 +241,7 @@
 <body>
     <main class="viewport">
         <section class="device-shell">
-            <header class="status-bar">
-                <span class="time">9:41</span>
-                <div class="status-icons">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
+
 
             <section class="screen">
                 <div class="header-section">
@@ -338,28 +331,28 @@
             </div>
 
             <!-- Hide Bottom Nav on Payment Page -->
-            <!-- <nav class="bottom-nav" aria-label="Primary">
+            <nav class="bottom-nav" aria-label="Primary">
                 <a href="index.html">Home</a>
-                <a href="history.html">Bidding</a>
+                <a href="history.html" class="active">Active</a>
+                <a href="receipts.html">History</a>
                 <a href="wallet.html">Wallet</a>
                 <a href="profile.html">Profile</a>
-            </nav> -->
+            </nav>
         </section>
     </main>
 
     <style>
         .floating-footer {
             position: absolute;
-            bottom: 0;
+            bottom: 80px;
             left: 0;
             right: 0;
             background: white;
-            padding: 16px 24px 34px;
-            /* Extra bottom padding for safe area */
+            padding: 16px 24px 16px;
             border-top: 1px solid var(--border);
             border-radius: 24px 24px 0 0;
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
-            z-index: 10;
+            z-index: 90;
         }
 
         .wallet-card-sm.footer-ver {

@@ -64,116 +64,104 @@
 <body>
     <main class="viewport">
         <section class="device-shell">
-            <header class="status-bar">
-                <span class="time">9:41</span>
-                <div class="status-icons">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
+
 
             <section class="screen">
-                <div class="screen-header compact">
-                    <h1>My Bid History</h1>
+                <div class="screen-header">
+                    <div class="brand">
+                        <div class="brand-logo-box">LOGO</div>
+                    </div>
+                    <div class="header-actions">
+                        <button type="button" onclick="window.location.href='notifications.html'">Notification</button>
+                    </div>
                 </div>
 
                 <div class="search-bar">
-                    <input type="text" placeholder="Search your bids..." aria-label="Search bids">
+                    <input type="text" placeholder="Search Property" aria-label="Search bids">
                 </div>
 
-                <div class="pill-group filter-scroll">
-                    <button class="pill active">All</button>
-                    <button class="pill">Status</button>
-                    <button class="pill">Status</button>
+                <div class="pill-group category-filter">
+                    <button class="pill active">Filter Option</button>
+                    <button class="pill">Filter Option</button>
+                    <button class="pill">Filter Option</button>
                 </div>
 
                 <div class="history-list">
-                    <!-- Won Item -->
-                    <a href="auction-won.html" style="text-decoration: none; color: inherit; display: block;">
-                        <article class="history-card">
-                            <div class="history-media">
-                                <div class="image-placeholder">IMAGE</div>
+                    <!-- Item 1 -->
+                    <article class="bid-card">
+                        <div class="bid-card-img">IMAGE</div>
+                        <div class="bid-card-content">
+                            <div class="bid-card-header">
+                                <h3 class="bid-title">Product Name</h3>
+                                <span class="bid-status">Status</span>
                             </div>
-                            <div class="history-content">
-                                <h3>Product Name</h3>
-                                <p class="label">Bid State:</p>
-                                <div class="action-note">
-                                    Product State
-                                </div>
+                            <div class="bid-row">
+                                <span class="bid-label">Current Bid:</span>
+                                <span class="bid-val">Bid Amount</span>
                             </div>
-                            <div class="history-right">
-                                <span class="status-badge">Status</span>
-                                <span class="history-price">Bid Price</span>
-                                <span class="history-time">Bid Hosted Date</span>
+                            <div class="bid-row">
+                                <span class="bid-label">Current Price:</span>
+                                <span class="bid-val highlight">Price Amount</span>
                             </div>
-                        </article>
-                    </a>
-
-                    <!-- Winning Item -->
-                    <article class="history-card">
-                        <div class="history-media">
-                            <div class="image-placeholder">IMAGE</div>
-                        </div>
-                        <div class="history-content">
-                            <h3>Product Name</h3>
-                            <p class="label">Bid State:</p>
-                            <div class="action-note">
-                                Product State
+                            <div class="bid-footer">
+                                <span>Time Remaining</span>
+                                <span>Last Update</span>
                             </div>
-                        </div>
-                        <div class="history-right">
-                            <span class="status-badge">Status</span>
-                            <span class="history-price">Bid Price</span>
-                            <span class="history-time">Bid Hosted Date</span>
                         </div>
                     </article>
 
-                    <!-- Cancelled Item -->
-                    <article class="history-card">
-                        <div class="history-media">
-                            <div class="image-placeholder">IMAGE</div>
-                        </div>
-                        <div class="history-content">
-                            <h3>Product Name</h3>
-                            <p class="label">Bid State:</p>
-                            <div class="action-note">
-                                Product State
+                    <!-- Item 2 -->
+                    <article class="bid-card">
+                        <div class="bid-card-img">IMAGE</div>
+                        <div class="bid-card-content">
+                            <div class="bid-card-header">
+                                <h3 class="bid-title">Product Name</h3>
+                                <span class="bid-status">Status</span>
                             </div>
-                        </div>
-                        <div class="history-right">
-                            <span class="status-badge">Status</span>
-                            <span class="history-price">Bid Price</span>
-                            <span class="history-time">Bid Hosted Date</span>
+                            <div class="bid-row">
+                                <span class="bid-label">Current Bid:</span>
+                                <span class="bid-val">Bid Amount</span>
+                            </div>
+                            <div class="bid-row">
+                                <span class="bid-label">Current Price:</span>
+                                <span class="bid-val highlight">Price Amount</span>
+                            </div>
+                            <div class="bid-footer">
+                                <span>Time Remaining</span>
+                                <span>Last Update</span>
+                            </div>
                         </div>
                     </article>
 
-                    <!-- Outbid Item -->
-                    <a href="product.html" style="text-decoration: none; color: inherit; display: block;">
-                        <article class="history-card">
-                            <div class="history-media">
-                                <div class="image-placeholder">IMAGE</div>
+                    <!-- Item 3 -->
+                    <article class="bid-card">
+                        <div class="bid-card-img">IMAGE</div>
+                        <div class="bid-card-content">
+                            <div class="bid-card-header">
+                                <h3 class="bid-title">Product Name</h3>
+                                <span class="bid-status">Status</span>
                             </div>
-                            <div class="history-content">
-                                <h3>Product Name</h3>
-                                <p class="label">Bid State:</p>
-                                <div class="action-note">
-                                    Product State
-                                </div>
+                            <div class="bid-row">
+                                <span class="bid-label">Current Bid:</span>
+                                <span class="bid-val">Bid Amount</span>
                             </div>
-                            <div class="history-right">
-                                <span class="status-badge">Status</span>
-                                <span class="history-price">Bid Price</span>
-                                <span class="history-time">Bid Hosted Date</span>
+                            <div class="bid-row">
+                                <span class="bid-label">Current Price:</span>
+                                <span class="bid-val highlight">Price Amount</span>
                             </div>
-                        </article>
-                    </a>
+                            <div class="bid-footer">
+                                <span>Time Remaining</span>
+                                <span>Last Update</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </section>
 
             <nav class="bottom-nav" aria-label="Primary">
                 <a href="index.html">Home</a>
-                <a href="history.html" aria-current="page">Bidding</a>
+                <a href="history.html" class="active">Active</a>
+                <a href="receipts.html">History</a>
                 <a href="wallet.html">Wallet</a>
                 <a href="profile.html">Profile</a>
             </nav>

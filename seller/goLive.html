@@ -9,154 +9,173 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Override specific to this page if needed, but styles.css should cover most */
+        .selection-ring {
+            border: 2px solid #333;
+            /* Monochrome selection */
+        }
+    </style>
 </head>
 
 <body>
     <main class="viewport">
         <section class="device-shell">
-            <!-- Status Bar -->
-            <header class="status-bar">
-                <span class="time">9:41</span>
-                <div class="status-icons">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
-
             <section class="screen">
-                <!-- Header with Back -->
-                <div class="screen-header" style="justify-content: flex-start; gap: 12px; margin-bottom: 24px;">
-                    <a href="index.html" class="back-btn">Back</a>
-                    <div>
-                        <h1 style="font-size: 16px; font-weight: 600; margin: 0;">Start Bid Session</h1>
+                <!-- Header -->
+                <div class="screen-header">
+                    <span style="font-weight: 700; font-size: 16px; color: #111;">Start Bid Session</span>
+                </div>
+
+                <!-- Modern Stepper -->
+                <div class="stepper-modern">
+                    <div class="stepper-line-bg"></div>
+                    <div class="stepper-item active">
+                        <div class="step-circle-m">1</div>
+                        <span class="step-label-m">Select Product</span>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-circle-m">2</div>
+                        <span class="step-label-m">Duration</span>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-circle-m">3</div>
+                        <span class="step-label-m">Confirm</span>
                     </div>
                 </div>
 
-                <!-- Stepper -->
-                <div class="stepper-container">
-                    <div class="step active">
-                        <div class="step-circle">1</div>
-                        <span class="step-label">Select</span>
-                    </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <div class="step-circle">2</div>
-                        <span class="step-label">Duration</span>
-                    </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <div class="step-circle">3</div>
-                        <span class="step-label">Confirm</span>
-                    </div>
+                <!-- Page Content -->
+                <div style="padding: 0 4px 12px 4px;">
+                    <h2 style="font-size: 18px; font-weight: 700; margin: 0 0 4px 0; color: #333;">Select Product</h2>
+                    <p style="font-size: 13px; color: #666; margin: 0;">Choose a product from your inventory to start a
+                        session.</p>
                 </div>
 
-                <!-- Step Title -->
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                    <div class="step-indicator-small">1</div>
-                    <h2 style="font-size: 14px; font-weight: 500; margin: 0;">Select Product</h2>
-                </div>
-                <p style="font-size: 12px; color: var(--muted-color); margin: 0 0 16px 28px;">Choose a product to start
-                    bidding</p>
-
-                <!-- Search & Filter -->
-                <div class="search-container" style="padding: 0;">
-                    <div class="search-bar" style="margin-bottom: 12px;">
-                        Search products...
+                <!-- Search -->
+                <div class="search-row">
+                    <div class="search-input-container">
+                        <input type="text" class="search-input-modern" placeholder="Search product placeholders">
                     </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                    <span style="font-size: 12px; color: var(--muted-color);">Filter by category:</span>
-                    <select class="category-select">
-                        <option selected>Category</option>
-                        <option>Category</option>
-                        <option>Category</option>
-                    </select>
+                    <button class="filter-btn">
+                        Filter
+                    </button>
                 </div>
 
-                <!-- Product List -->
-                <div class="listings" style="padding-bottom: 80px;"> <!-- Padding for bottom button -->
-                    <!-- Product 1 -->
-                    <article class="card">
-                        <div class="card-image-area">
-                            <span class="pill-tag">Category</span>
+                <!-- Categories -->
+                <div class="category-scroll">
+                    <button class="cat-pill active">All</button>
+                    <button class="cat-pill">Category</button>
+                    <button class="cat-pill">Category</button>
+                </div>
+
+                <!-- Product List (Selectable) -->
+                <div class="products-list" id="productList">
+                    <!-- Item 1 -->
+                    <div class="product-card-h" onclick="selectProduct(this, 'product1')">
+                        <div class="prod-img-box">
+                            <span class="tag-overlay">Category</span>
                             IMAGE
                         </div>
-                        <div class="card-content">
-                            <div>
-                                <h3 class="card-title">Product Name</h3>
-                                <div class="card-meta-group">
-                                    <p class="card-label">Starting Price</p>
-                                    <p class="card-price">RM xxx.xx</p>
-                                </div>
+                        <div class="prod-details">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h3 class="prod-title" style="margin: 0; flex: 1; padding-right: 8px;">Product Name</h3>
+                                <span class="status-badge-active">Status</span>
                             </div>
-                            <div class="card-footer">
-                                <span></span>
-                                <span>Stock Quantity</span>
+
+                            <div class="prod-meta-label">Starting / Current</div>
+                            <div class="price-row">
+                                <span class="price-starting">RM XXX.XX</span>
+                                <span class="price-divider">/</span>
+                                <span class="price-current">RM XXX.XX</span>
+                            </div>
+
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 4px;">
+                                <span class="prod-stock" style="margin: 0;">Stock: XX</span>
                             </div>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Product 2 -->
-                    <article class="card">
-                        <div class="card-image-area">
-                            <span class="pill-tag">Category</span>
+                    <!-- Item 2 -->
+                    <div class="product-card-h" onclick="selectProduct(this, 'product2')">
+                        <div class="prod-img-box">
+                            <span class="tag-overlay">Category</span>
                             IMAGE
                         </div>
-                        <div class="card-content">
-                            <div>
-                                <h3 class="card-title">Product Name</h3>
-                                <div class="card-meta-group">
-                                    <p class="card-label">Starting Price</p>
-                                    <p class="card-price">RM xxx.xx</p>
-                                </div>
+                        <div class="prod-details">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h3 class="prod-title" style="margin: 0; flex: 1; padding-right: 8px;">Product Name</h3>
+                                <span class="status-badge-active">Status</span>
                             </div>
-                            <div class="card-footer">
-                                <span></span>
-                                <span>Stock Quantity</span>
-                            </div>
-                        </div>
-                    </article>
 
-                    <!-- Product 3 -->
-                    <article class="card">
-                        <div class="card-image-area">
-                            <span class="pill-tag">Category</span>
-                            IMAGE
-                        </div>
-                        <div class="card-content">
-                            <div>
-                                <h3 class="card-title">Product Name</h3>
-                                <div class="card-meta-group">
-                                    <p class="card-label">Starting Price</p>
-                                    <p class="card-price">RM xxx.xx</p>
-                                </div>
+                            <div class="prod-meta-label">Starting / Current</div>
+                            <div class="price-row">
+                                <span class="price-starting">RM XXX.XX</span>
+                                <span class="price-divider">/</span>
+                                <span class="price-current">RM XXX.XX</span>
                             </div>
-                            <div class="card-footer">
-                                <span></span>
-                                <span>Stock Quantity</span>
+
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 4px;">
+                                <span class="prod-stock" style="margin: 0;">Stock: XX</span>
                             </div>
                         </div>
-                    </article>
+                    </div>
                 </div>
 
-                <!-- Next Button -->
-                <div class="fixed-bottom-action">
-                    <a href="goLive-step2.html" class="primary-btn">Next</a>
+                <!-- Fixed Bottom Button -->
+                <div class="fixed-bottom-container">
+                    <a href="goLive-step2.html" id="nextBtn" class="primary-btn disabled">Next</a>
                 </div>
+
+                <!-- Bottom Navigation (Inside Screen for absolute positioning) -->
+                <nav class="bottom-nav">
+                    <a href="index.html" class="nav-item">
+                        Home
+                    </a>
+                    <a href="products.html" class="nav-item">
+                        Products
+                    </a>
+                    <a href="goLive.html" class="nav-item">
+                        Start<br>Session
+                    </a>
+                    <a href="orders.html" class="nav-item">
+                        Orders
+                    </a>
+                    <a href="profile.html" class="nav-item">
+                        Profile
+                    </a>
+                </nav>
 
             </section>
-
-            <!-- Bottom Navigation -->
-            <nav class="bottom-nav">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="products.html" class="nav-item">Products</a>
-                <a href="goLive.html" class="nav-item active">Start Session</a>
-                <a href="orders.html" class="nav-item">Orders</a>
-                <a href="profile.html" class="nav-item">Profile</a>
-            </nav>
         </section>
     </main>
+
+    <script>
+        let selectedProductId = null;
+
+        function selectProduct(element, id) {
+            // Remove active style from all cards
+            const cards = document.querySelectorAll('.product-card-h');
+            cards.forEach(card => {
+                card.style.border = '1px solid #e0e0e0';
+                card.style.background = '#fff';
+            });
+
+            // Add active style to selected
+            element.style.border = '2px solid #333';
+            element.style.background = '#f9f9f9';
+
+            selectedProductId = id;
+
+            // Enable Next button
+            const nextBtn = document.getElementById('nextBtn');
+            nextBtn.classList.remove('disabled');
+            nextBtn.style.pointerEvents = 'auto'; // Re-enable pointer events just in case, though css handles it
+        }
+    </script>
 </body>
 
 </html>

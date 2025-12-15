@@ -14,44 +14,52 @@
 <body>
     <main class="viewport">
         <section class="device-shell">
-            <header class="status-bar">
-                <span class="time">9:41</span>
-                <div class="status-icons">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
+
 
             <section class="screen">
                 <div class="screen-header">
                     <div class="brand">
-                        <div class="brand-icon">LOGO</div>
+                        <div class="brand-logo-box">LOGO</div>
                     </div>
                     <div class="header-actions">
-                        <button type="button">Filter</button>
                         <button type="button" onclick="window.location.href='notifications.html'">Notification</button>
                     </div>
                 </div>
 
-                <div class="search-bar">
-                    <input type="text" placeholder="Search  Placeholders" aria-label="Search products">
+                <div class="search-row">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search Property" aria-label="Search auctions">
+                    </div>
+                    <button class="filter-btn-icon" aria-label="Filter">
+                        Filter
+                    </button>
                 </div>
 
-                <div class="pill-group category-filter" role="group" aria-label="Category filter">
-                    <button class="pill active" type="button" data-category-filter="all">All</button>
-                    <button class="pill" type="button" data-category-filter="option-a">Filter Option</button>
-                    <button class="pill" type="button" data-category-filter="option-b">Filter Option</button>
+                <div class="pill-group main-tabs">
+                    <button class="pill active big">Display</button>
+                    <button class="pill big">Display</button>
+                    <button class="pill big">Display</button>
                 </div>
 
+                <div class="filter-section">
+                    <h3>Category</h3>
+                    <div class="pill-wrap">
+                        <button class="pill active">Category</button>
+                        <button class="pill">Category</button>
+                    </div>
+                </div>
 
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <div class="pill-grid">
+                        <button class="pill active full">Range</button>
+                        <button class="pill full">Range</button>
+                    </div>
+                </div>
 
                 <div class="section-heading">
-                    <h2>Active Auction Cards</h2>
-                    <span class="live-badge">
-                        <span class="dot" aria-hidden="true"></span>
-                        Status
-                    </span>
+                    <h2>Active Auctions</h2>
+                    <a href="#" class="view-all">View All</a>
                 </div>
 
                 <div class="auction-grid">
@@ -118,8 +126,11 @@
             </section>
 
             <nav class="bottom-nav" aria-label="Primary">
-                <a href="index.html" aria-current="page">Home</a>
-                <a href="history.html">Bidding</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="history.html">
+                    Active
+                </a>
+                <a href="receipts.html">History</a>
                 <a href="wallet.html">Wallet</a>
                 <a href="profile.html">Profile</a>
             </nav>
